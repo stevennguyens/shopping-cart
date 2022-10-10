@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --primary: rgb(173, 205, 243);
+    --font-color: rgb(15, 23, 42);
+}
