@@ -5,7 +5,48 @@
     font-family: 'Manrope', Helvetica, Arial, sans-serif;
 }
 
+body {
+    background: var(--white);
+}
+
 :root {
-    --primary: rgb(173, 205, 243);
+    --primary: rgb(165, 189, 220);
     --font-color: rgb(15, 23, 42);
+    --light-font-color: rgb(72, 87, 120);
+    --white: rgb(246, 246, 246);
+    --grey: rgb(145, 145, 145);
+}
+
+a {
+    color: var(--font-color);
+}
+
+#error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--primary);
+}
+
+#error-page div {
+    text-align: center;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.photo-header img {
+    height: 800px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 48
 }

@@ -1,0 +1,15 @@
+.product-page {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 90px 
+}
+
+.product-page h3 {
+    font-size: 2rem;
+}
+.product-page img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}

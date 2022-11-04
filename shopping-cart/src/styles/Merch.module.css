@@ -1,0 +1,58 @@
+.merch-container {
+    display: flex;
+    padding-top: 80px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 70px;
+}
+
+.sidebar * {
+    padding-bottom: 10px;
+    font-size: .9rem;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-container img {
+    width: 200px;
+}
+
+.card {
+    margin: 0px 40px 40px 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.card:hover h3 {
+    color: var(--light-font-color);
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: .8rem;
+    text-align: center;
+    padding-top: 15px;
+    font-weight: 500;
+}
+
+.card p {
+    font-size: .7rem;
+}
+
+.active {
+    font-weight: 600
+}
