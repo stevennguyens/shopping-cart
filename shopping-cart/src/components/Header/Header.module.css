@@ -19,16 +19,21 @@
     font-size: 1.2rem;
 }
 
-.cart {
-    font-size: 2rem;
+.cart-icon {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
+.cart-icon, 
 a {
     color: var(--font-color);
     text-decoration: none;
     cursor: pointer;
 }
 
+.cart-icon:hover,
 a:hover {
     color: var(--light-font-color);
 }

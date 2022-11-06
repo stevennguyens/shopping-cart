@@ -25,16 +25,16 @@ export default function Merch() {
                 {categoryId === 'all' ?
                     products.map(product => {
                         return (
-                            <Link to={`/merch/product/${product.id}`}>
-                                <Card className={styles.card} key={uniqid()} product={product}/>
+                            <Link key={uniqid()} to={`/merch/product/${product.id}`}>
+                                <Card className={styles.card} product={product}/>
                             </Link>
                         )
                     }) :
                     products.filter(product => product.categoryId === categoryId)
                             .map(product => {
                                 return (
-                                    <Link to={`/merch/product/${product.id}`}>
-                                        <Card className={styles.card} key={uniqid()} product={product}/>
+                                    <Link key={uniqid()} to={`/merch/product/${product.id}`}>
+                                        <Card className={styles.card} product={product}/>
                                     </Link>
                                     
                                 )

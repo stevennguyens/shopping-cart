@@ -7,18 +7,19 @@ const onMerchClick = () => {
     
 }
 
-const Header = () => {
+const Header = ({cartItems, setOpenCart}) => {
     return(
         <div id={styles.header}>
             <NavLink to={`/merch/all`} className={styles.text}>
                 Merch
             </NavLink>
             <NavLink to={`/`} className={styles["header-title"]}>Taylor Swift</NavLink>
-            <NavLink to={`/shopping-cart`} className={styles.cart}>
-                <span className="material-symbols-outlined">
+            <div className={styles["cart-icon"]}>
+                <p>{cartItems.length}</p>
+                <span onClick={(e) => setOpenCart(true)} className="material-symbols-outlined">
                     shopping_bag
                 </span>
-            </NavLink>
+            </div>
         </div>
     )
 }

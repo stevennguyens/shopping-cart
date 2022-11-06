@@ -32,10 +32,6 @@ const router = createBrowserRouter([
           {
             path: '/merch/product/:productId',
             element: <ProductPage/>
-          },
-          {
-            path: '/shopping-cart',
-            element: <Shop/>,
           }
         ]
       }
