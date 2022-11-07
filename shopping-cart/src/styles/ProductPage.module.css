@@ -2,7 +2,7 @@
     display: grid;
     gap: 50px;
     padding-top: 90px;
-    grid-template-columns: 1.2fr 1fr; 
+    grid-template-columns: 1.5fr 1fr; 
 }
 
 .product-page h3 {
@@ -26,28 +26,8 @@
     align-items: center;
 }
 
-.quantity-btn {
-    border: 1px solid var(--grey);
-    display: flex;
-    margin-top: 20px;
-}
-
-.quantity-btn div {
-    padding: 5px 10px;
-}
-
-.quantity-btn div:hover {
-    cursor: pointer;
-    background-color: var(--grey);
-}
-
-.quantity-btn input {
-    background-color: var(--white);
-    outline: none;
-    border: 0;
-    margin: 0px 10px;
-    text-align: center;
-    width: 25px;
+.product-info .price {
+    margin-bottom: 20px;
 }
 
 .button {

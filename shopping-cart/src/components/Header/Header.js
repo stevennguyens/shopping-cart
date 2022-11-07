@@ -1,13 +1,11 @@
+import { useEffect } from 'react';
 import {
     NavLink
 } from 'react-router-dom';
 import styles from './Header.module.css';
 
-const onMerchClick = () => {
-    
-}
 
-const Header = ({cartItems, setOpenCart}) => {
+const Header = ({totalItems, cartItems, setOpenCart}) => {
     return(
         <div id={styles.header}>
             <NavLink to={`/merch/all`} className={styles.text}>
@@ -15,7 +13,7 @@ const Header = ({cartItems, setOpenCart}) => {
             </NavLink>
             <NavLink to={`/`} className={styles["header-title"]}>Taylor Swift</NavLink>
             <div className={styles["cart-icon"]}>
-                <p>{cartItems.length}</p>
+                <p>{totalItems}</p>
                 <span onClick={(e) => setOpenCart(true)} className="material-symbols-outlined">
                     shopping_bag
                 </span>

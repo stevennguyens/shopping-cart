@@ -1,0 +1,22 @@
+.quantity-btn {
+    border: 1px solid var(--grey);
+    display: flex;
+}
+
+.quantity-btn div {
+    padding: 5px 10px;
+}
+
+.quantity-btn div:hover {
+    cursor: pointer;
+    background-color: var(--grey);
+}
+
+.quantity-btn input {
+    background-color: var(--white);
+    outline: none;
+    border: 0;
+    margin: 0px 10px;
+    text-align: center;
+    width: 25px;
+}
