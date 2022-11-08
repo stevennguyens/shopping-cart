@@ -1,6 +1,6 @@
 import products from '../data/allProducts';
 import styles from '../styles/ProductPage.module.css';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams, useOutletContext } from 'react-router-dom';
 import QuantityBtn from '../components/QuantityBtn/QuantityBtn';
 
@@ -8,11 +8,11 @@ export default function ProductPage() {
     const {cartItems, setCartItems} = useOutletContext();
     const [quantity, setQuantity] = useState(1);
 
-    const onChange = (e) => {
+    const onBlur = (e) => {
         if (e.target.value > 0) {
-            // do nothing
+            setQuantity(+e.target.value);
         } else {
-            e.target.value = 1;
+            setQuantity(1);
         }
     }
 
@@ -38,6 +38,10 @@ export default function ProductPage() {
         }
     }
 
+    const quantityVal = useRef();
+    useEffect(() => {
+        quantityVal.current.value = quantity;
+    }, [quantity])
     let { productId } = useParams();
     let product = products.find(product => productId === product.id);
     return(
@@ -48,7 +52,7 @@ export default function ProductPage() {
             <div className={styles["product-info"]}>
                 <h3>{product.name}</h3>
                 <p className={styles.price}>${product.price}</p>
-                <QuantityBtn onChange={onChange} onClickAdd={onClickAdd} onClickSubtract={onClickSubtract} quantity={quantity}/>
+                <QuantityBtn ref={quantityVal} onBlur={onBlur} onClickAdd={onClickAdd} onClickSubtract={onClickSubtract} quantity={quantity}/>
                 <button onClick={() => addProduct(product)} className={`${styles.button} ${styles["add-to-bag-button"]}`}>Add to Bag</button>
             </div>
         </div>
