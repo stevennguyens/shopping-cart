@@ -1,5 +1,6 @@
 import {
-  Outlet
+  Outlet,
+  useLocation
 } from 'react-router-dom';
 import Header from "../components/Header/Header";
 import Cart from "../components/Cart/Cart";
@@ -7,7 +8,6 @@ import {useState, useEffect} from 'react';
 
 function App() {
   const [openCart, setOpenCart] = useState(false);
-  const [closeCart, setCloseCart] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
 
@@ -36,14 +36,15 @@ function App() {
     setTotalItems(cartItems.reduce((prev, curr) => {
       return prev + curr.quantity}, 0))
   }, [cartItems])
+
+  let path = useLocation().pathname;
+
   return (
-    <>
+    <div className={path === '/' ? 'home' : ''}>
       <Header totalItems={totalItems} setTotalItems={setTotalItems} cartItems={cartItems} setOpenCart={setOpenCart} />
-      <div id="content">
-        <Outlet context={{openCart, setOpenCart, cartItems, setCartItems}}/>
-      </div>
-      {openCart ? <Cart updateQuantity={updateQuantity} setOpenCart={setOpenCart} cartItems={cartItems} setCartItems={setCartItems} /> : ""}
-    </>
+      <Outlet context={{openCart, setOpenCart, cartItems, setCartItems}}/>
+      {openCart ? <Cart updateQuantity={updateQuantity} setOpenCart={setOpenCart} cartItems={cartItems} setCartItems={setCartItems} /> : null}
+    </div>
   );
 }
 

@@ -5,7 +5,7 @@ import {
 import styles from './Header.module.css';
 
 
-const Header = ({totalItems, cartItems, setOpenCart}) => {
+const Header = ({totalItems, setOpenCart}) => {
     return(
         <div id={styles.header}>
             <NavLink to={`/merch/all`} className={styles.text}>

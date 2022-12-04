@@ -37,8 +37,29 @@ a {
     padding: 50px;
 }
 
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.photo-header {
+    display: flex;
+    height: 100%;
+}
+
+.photo-header::after {
+    content:'';
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.343) 0px 0px 100px 230px inset;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
 .photo-header img {
-    height: 800px;
     width: 100%;
     object-fit: cover;
 }
